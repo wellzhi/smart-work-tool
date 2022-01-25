@@ -1,14 +1,20 @@
 package com.liuxz.smart.biz;
 
 
-import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
+import com.liuxz.smart.plugin.processor.api.ApiDocModel;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class BizUtil {
     public static final String QUOTES = "\"";
@@ -91,62 +97,63 @@ public class BizUtil {
         return null;
     }
 
-    public static void main(String[] args) {
-        String str = "@RequestMapping(value = \"/admin\")";
-        if (str.contains("@RequestMapping")) {
-            String apiL2Name = StrUtil.subBetween(str, "\"", "\"");
-            if (StrUtil.contains(str, "/")) {
-                System.out.println(apiL2Name);
-            } else {
-                System.out.println("/" + apiL2Name);
-            }
-        }
-
-        System.out.println(DateUtil.format(DateUtil.date(1642666827824L),"yyyy-MM-dd hh:mm:ss"));
-
-    }
 
 
-    /**
-     * 选中Api参数代码，生成wiki文档requestBody json
-     * 所在代码文件提取api相对路径
-     */
-    public static String genApiDoc(String selectedText, String filePath) {
-        FileInputStream inputStream = null;
-        BufferedReader bufferedReader = null;
-        try {
-            inputStream = new FileInputStream(filePath);
-            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            String str;
-            String apiL2Name = null;
-            String apiL3Name = null;
-            while ((str = bufferedReader.readLine()) != null) {
-                if (str.contains("@RequestMapping")) {
-                    apiL2Name = StrUtil.subBetween(str, "\"", "\"");
-                    if (!StrUtil.contains(apiL2Name, "/")) {
-                        apiL2Name = "/" + apiL2Name;
-                    }
-                }
-            }
-            List<String> lineStrList = StrUtil.splitTrim(selectedText, "\n");
-            for (String lineStr : lineStrList) {
-                if (StrUtil.isNotBlank(lineStr)) {
-                    if (lineStr.contains("@PostMapping") || lineStr.contains("@GetMapping")) {
-                        apiL3Name = StrUtil.subBetween(lineStr, "\"", "\"");
-                        if (!StrUtil.contains(apiL3Name, "/")) {
-                            apiL3Name = "/" + apiL3Name;
-                        }
-                    }
-                }
-            }
-            System.out.println("/app" + apiL2Name + apiL3Name);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
+    public static ApiDocModel genApiDoc(String allText, String selectedText) {
+        ApiDocModel docModel = new ApiDocModel();
+        List<String> lineStrs = StrUtil.splitTrim(allText, "\n");
+        //移除空白元素
+        CollUtil.removeBlank(lineStrs);
+
+        Optional<String> optional = lineStrs
+                .stream()
+                .filter(f -> f.contains("@RequestMapping"))
+                .findFirst();
+        String apiL2Name = null;
+        String apiL3Name = null;
+        if (optional.isPresent()) {
+            String reqStr = optional.get();
+            apiL2Name = StrUtil.subBetween(reqStr, "\"", "\"");
+            apiL2Name = apiL2Name.startsWith("/") ? apiL2Name : "/" + apiL2Name;
 
         }
+
+        List<String> selectedLines = StrUtil.splitTrim(selectedText, "\n");
+        //移除空白元素
+        CollUtil.removeBlank(selectedLines);
+        Optional<String> selectedOptional = selectedLines
+                .stream()
+                .filter(f -> f.contains("@PostMapping") || f.contains("@GetMapping"))
+                .findFirst();
+        if (selectedOptional.isPresent()) {
+            String reqStr = selectedOptional.get();
+            apiL3Name = StrUtil.subBetween(reqStr, "\"", "\"");
+            apiL3Name = apiL3Name.startsWith("/") ? apiL3Name : "/" + apiL3Name;
+        }
+
+        docModel.setApiUrl(apiL2Name + apiL3Name);
+        System.out.println(apiL2Name + apiL3Name);
+
+        List<String> apiParamStrs = selectedLines
+                .stream()
+                .filter(f -> f.contains("=") && f.contains("node"))
+                .collect(Collectors.toList());
+
+        StringBuffer reqSb = new StringBuffer();
+        reqSb.append(StrUtil.DELIM_START);
+        for (String apiParamStr : apiParamStrs) {
+            String typeStr = StrUtil.trim(StrUtil.subBetween(apiParamStr, "=", "("));
+            if (Const.PARAM_TYPE_MAP.containsKey(typeStr)) {
+                String paramName = StrUtil.subBetween(apiParamStr, "\"", "\"");
+                Object paramType = Const.PARAM_TYPE_MAP.get(typeStr);
+                reqSb.append("\"").append(paramName).append("\"").append(":")
+                        .append("\"").append("${").append(paramName).append(":")
+                        .append(paramType).append("}").append("\"").append(",");
+            }
+        }
+        reqSb.append(StrUtil.DELIM_END);
+        docModel.setApiReq(JSONUtil.formatJsonStr(reqSb.toString()));
+        System.out.println(JSONUtil.formatJsonStr(reqSb.toString()));
         return null;
     }
 }

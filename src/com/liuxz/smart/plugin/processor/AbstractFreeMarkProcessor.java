@@ -2,9 +2,7 @@ package com.liuxz.smart.plugin.processor;
 
 import freemarker.template.Template;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 
 public abstract class AbstractFreeMarkProcessor implements Processor {
@@ -14,7 +12,7 @@ public abstract class AbstractFreeMarkProcessor implements Processor {
 
     protected abstract Object getModel(SourceNoteData sourceNoteData);
 
-    protected abstract Writer getWriter(SourceNoteData sourceNoteData) throws FileNotFoundException, UnsupportedEncodingException, Exception;
+    protected abstract Writer getWriter(SourceNoteData sourceNoteData) throws Exception;
 
 
     @Override

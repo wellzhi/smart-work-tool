@@ -1,6 +1,5 @@
 package com.liuxz.smart.plugin.processor;
 
-// import icu.jogeen.markbook.data.NoteData;
 
 import com.liuxz.smart.plugin.data.NoteData;
 
