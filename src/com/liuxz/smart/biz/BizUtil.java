@@ -98,7 +98,6 @@ public class BizUtil {
     }
 
 
-
     public static ApiDocModel genApiDoc(String allText, String selectedText) {
         ApiDocModel docModel = new ApiDocModel();
         List<String> lineStrs = StrUtil.splitTrim(allText, "\n");
@@ -111,6 +110,7 @@ public class BizUtil {
                 .findFirst();
         String apiL2Name = null;
         String apiL3Name = null;
+        String requestMethod = "POST";
         if (optional.isPresent()) {
             String reqStr = optional.get();
             apiL2Name = StrUtil.subBetween(reqStr, "\"", "\"");
@@ -129,9 +129,12 @@ public class BizUtil {
             String reqStr = selectedOptional.get();
             apiL3Name = StrUtil.subBetween(reqStr, "\"", "\"");
             apiL3Name = apiL3Name.startsWith("/") ? apiL3Name : "/" + apiL3Name;
+            if (reqStr.contains("@GetMapping")) {
+                requestMethod = "GET";
+            }
         }
 
-        docModel.setApiUrl(apiL2Name + apiL3Name);
+        docModel.setApiUrl(requestMethod + "   " + apiL2Name + apiL3Name);
         System.out.println(apiL2Name + apiL3Name);
 
         List<String> apiParamStrs = selectedLines
@@ -154,6 +157,6 @@ public class BizUtil {
         reqSb.append(StrUtil.DELIM_END);
         docModel.setApiReq(JSONUtil.formatJsonStr(reqSb.toString()));
         System.out.println(JSONUtil.formatJsonStr(reqSb.toString()));
-        return null;
+        return docModel;
     }
 }

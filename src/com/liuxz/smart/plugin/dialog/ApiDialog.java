@@ -2,6 +2,7 @@ package com.liuxz.smart.plugin.dialog;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
+import com.liuxz.smart.plugin.processor.api.ApiDocModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,19 +10,18 @@ import java.awt.*;
 public class ApiDialog extends JDialog {
     private Project project;
     private JPanel contentPanel;
-    private JTextField textField2;
-    private JPanel uriPanel;
-    private JButton 生成Button;
-    private JButton 取消Button;
-    private JTextArea textArea1;
-    private JTextArea textArea2;
-    private JTextArea textArea3;
+    private JTextField uriValue;
+    private JTextArea reqValue;
+    private JTextArea resValue;
 
 
-    public ApiDialog(Project project) {
+    public ApiDialog(Project project, ApiDocModel apiDocModel) {
         this.project = project;
         setContentPane(contentPanel);
         setModal(true);
+        uriValue.setText(apiDocModel.getApiUrl());
+        reqValue.setText(apiDocModel.getApiReq());
+        resValue.setText(apiDocModel.getApiRes());
         //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     }
     /**

@@ -46,8 +46,8 @@
         </action>
 
         <!-- 编辑区域：右键菜单-->
-        <action id="PopupAction_ID2" class="com.liuxz.smart.plugin.actions.PopupAction" text="liuxz-mark"
-                description="Add a note"
+        <action id="PopupAction_ID2" class="com.liuxz.smart.plugin.actions.PopupAction" text="genViewJson"
+                description="生成视图结构json"
                 icon="/img/mark.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
