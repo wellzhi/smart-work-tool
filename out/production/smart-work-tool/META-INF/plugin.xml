@@ -1,13 +1,13 @@
 <idea-plugin>
     <!-- 插件唯一id，不能和其他插件项目重复，所以推荐使用com.xxx.xxx的格式
         插件不同版本之间不能更改，若没有指定，则与插件名称相同 -->
-    <id>com.liuxz.smart.plugin.id</id>
+    <id>com.helper.toolkit.plugin.id</id>
     <!-- 插件名称，别人在官方插件库搜索你的插件时使用的名称 -->
-    <name>smart-code-helper</name>
+    <name>smart-work-tool</name>
     <!-- 插件版本号 -->
     <version>1.0</version>
     <!-- 供应商主页和email（不能使用默认值，必须修改成自己的）-->
-    <vendor email="1510822551@qq.com" url="http://www.1510822551.com">LIUXZCompany</vendor>
+    <vendor email="381197562@qq.com" url="https://github.com/wellzhi/smart-work-tool">Company</vendor>
     <!-- 插件的描述 （不能使用默认值，必须修改成自己的。并且需要大于40个字符）-->
     <description>
         <![CDATA[自己工作中使用方便而开发，方便写接口文档，方便转等，后续迭代开发，逐步完善，利用闲暇时间开发]]>
@@ -41,43 +41,43 @@
     <!-- 编写插件动作 -->
     <actions>
         <!-- Add your actions here -->
-        <action id="test_id" class="com.liuxz.smart.plugin.actions.TestAction" text="通知" description="测试通知功能">
+        <action id="test_id" class="com.helper.toolkit.plugin.actions.TestAction" text="通知" description="测试通知功能">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
 
         <!-- 编辑区域：右键菜单-->
-        <action id="PopupAction_ID2" class="com.liuxz.smart.plugin.actions.PopupAction" text="genViewJson"
+        <action id="PopupAction_ID2" class="com.helper.toolkit.plugin.actions.PopupAction" text="genViewJson"
                 description="生成视图结构json"
                 icon="/img/mark.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
-        <action id="ApiDocAction_ID" class="com.liuxz.smart.plugin.actions.ApiDocAction" text="genApiDoc"
+        <action id="ApiDocAction_ID" class="com.helper.toolkit.plugin.actions.ApiDocAction" text="genApiDoc"
                 description="生成apiDoc"
                 icon="/img/mark.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
 
-        <action id="id_GenerateRestUrl" class="com.liuxz.work.helper.actions.GenerateUrlAction"
-                text="liuxz-api">
+       <!-- <action id="id_GenerateRestUrl" class="com.helper.work.helper.actions.GenerateUrlAction"
+                text="helper-api">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-        </action>
+        </action>-->
 
         <!--<group id="MyPlugin.SampleMenu" text="Sample Menu" description="Sample menu description">
             &lt;!&ndash;添加到工具栏最后一个&ndash;&gt;
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="Myplugin.Textboxes" class="com.liuxz.smart.plugin.actions.TextBoxes" text="Text Boxes"
+            <action id="Myplugin.Textboxes" class="com.helper.smart.plugin.actions.TextBoxes" text="Text Boxes"
                     description="Text Boxes description"/>
         </group>-->
     </actions>
 
     <!--idea启动后运行代码-->
     <extensions defaultExtensionNs="com.intellij">
-        <postStartupActivity implementation="com.liuxz.smart.plugin.components.TestApplication"/>
+        <postStartupActivity implementation="com.helper.toolkit.plugin.components.TestApplication"/>
     </extensions>
 
     <depends>com.intellij.modules.lang</depends>
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="MarkBook" factoryClass="com.liuxz.smart.plugin.window.NoteListWindowFactory" anchor="right"
+        <toolWindow id="MarkBook" factoryClass="com.helper.toolkit.plugin.window.NoteListWindowFactory" anchor="right"
                     icon="/img/mark.png"></toolWindow>
     </extensions>
 </idea-plugin>
