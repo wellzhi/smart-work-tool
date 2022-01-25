@@ -51,6 +51,11 @@
                 icon="/img/mark.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
+        <action id="ApiDocAction_ID" class="com.liuxz.smart.plugin.actions.ApiDocAction" text="genApiDoc"
+                description="生成apiDoc"
+                icon="/img/mark.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
 
         <action id="id_GenerateRestUrl" class="com.liuxz.work.helper.actions.GenerateUrlAction"
                 text="liuxz-api">
