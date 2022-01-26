@@ -11,5 +11,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="freemarker-2.3.30" level="project" />
     <orderEntry type="library" name="lombok-1.18.22" level="project" />
+    <orderEntry type="library" name="lombok-1.18.18" level="project" />
   </component>
 </module>

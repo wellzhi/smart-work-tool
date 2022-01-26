@@ -110,7 +110,7 @@ public class BizUtil {
                 .findFirst();
         String apiL2Name = null;
         String apiL3Name = null;
-        String requestMethod = "POST";
+        String apiMethod = "POST";
         if (optional.isPresent()) {
             String reqStr = optional.get();
             apiL2Name = StrUtil.subBetween(reqStr, "\"", "\"");
@@ -130,11 +130,14 @@ public class BizUtil {
             apiL3Name = StrUtil.subBetween(reqStr, "\"", "\"");
             apiL3Name = apiL3Name.startsWith("/") ? apiL3Name : "/" + apiL3Name;
             if (reqStr.contains("@GetMapping")) {
-                requestMethod = "GET";
+                apiMethod = "GET";
             }
         }
-
-        docModel.setApiUrl(requestMethod + "   " + apiL2Name + apiL3Name);
+        docModel.setApiMethod(apiMethod);
+        String apiUrl = apiL2Name + apiL3Name;
+        docModel.setApiUrl(apiUrl);
+        //  /insuranceCategory/saveInsuranceFirstCategory --> Api-insuranceCategory-saveInsuranceFirstCategory.md
+        docModel.setApiDocName("Api" + apiUrl.replaceAll("/", "-") + ".md");
         System.out.println(apiL2Name + apiL3Name);
 
         List<String> apiParamStrs = selectedLines
@@ -156,6 +159,7 @@ public class BizUtil {
         }
         reqSb.append(StrUtil.DELIM_END);
         docModel.setApiReq(JSONUtil.formatJsonStr(reqSb.toString()));
+        docModel.setFullFilePath(docModel.getFilePath() + docModel.getApiDocName());
         System.out.println(JSONUtil.formatJsonStr(reqSb.toString()));
         return docModel;
     }

@@ -6,10 +6,12 @@ import freemarker.cache.StringTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.util.Map;
 
+@Slf4j
 public class GenUtil {
     public static void main(String[] args) throws IOException, TemplateException {
         String req = "{\n" +
@@ -26,20 +28,26 @@ public class GenUtil {
         genApiDoc(docModel);
     }
 
-    public static void genApiDoc(ApiDocModel docModel) throws IOException, TemplateException {
-        Configuration configuration = new Configuration(Configuration.VERSION_2_3_30);
-        StringTemplateLoader stringTemplateLoader = new StringTemplateLoader();
-        stringTemplateLoader.putTemplate("ApiDocTemplate", docModel.getTemplateContent());
-        configuration.setTemplateLoader(stringTemplateLoader);
-        Template template = configuration.getTemplate("ApiDocTemplate");
-        Map<String, Object> contentMap = BeanUtil.beanToMap(docModel);
-        // Map contentMap = new HashMap();
-        // contentMap.put("apiUrl", docModel.getApiUrl());
-        // contentMap.put("apiReq", docModel.getApiReq());
-        // contentMap.put("apiRes", docModel.getApiRes());
-        File file = new File(docModel.getFilePath() + "/" + docModel.getApiDocName());
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
-        template.process(contentMap, writer);
+    public static void genApiDoc(ApiDocModel docModel) {
+        try {
+            Configuration configuration = new Configuration(Configuration.VERSION_2_3_30);
+            StringTemplateLoader stringTemplateLoader = new StringTemplateLoader();
+            stringTemplateLoader.putTemplate("ApiDocTemplate", docModel.getTemplateContent());
+            configuration.setTemplateLoader(stringTemplateLoader);
+            Template template = configuration.getTemplate("ApiDocTemplate");
+            Map<String, Object> contentMap = BeanUtil.beanToMap(docModel);
+            // Map contentMap = new HashMap();
+            // contentMap.put("apiUrl", docModel.getApiUrl());
+            // contentMap.put("apiReq", docModel.getApiReq());
+            // contentMap.put("apiRes", docModel.getApiRes());
+            //File file = new File(docModel.getFilePath() + "/" + docModel.getApiDocName());
+            File file = new File(docModel.getFullFilePath());
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
+            template.process(contentMap, writer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        }
     }
 }
 

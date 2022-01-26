@@ -1,8 +1,9 @@
 package com.helper.toolkit.plugin.dialog;
 
+import com.helper.toolkit.biz.GenUtil;
+import com.helper.toolkit.plugin.processor.api.ApiDocModel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-import com.helper.toolkit.plugin.processor.api.ApiDocModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +16,9 @@ public class ApiDialog extends JDialog {
     private JTextArea resValue;
     private JButton generateBtn;
     private JButton cancelBtn;
+    private JTextField docNameValue;
+    private JTextField apiMethodValue;
+    private JTextField fullFilePathValue;
 
 
     public ApiDialog(Project project, ApiDocModel apiDocModel) {
@@ -24,6 +28,9 @@ public class ApiDialog extends JDialog {
         uriValue.setText(apiDocModel.getApiUrl());
         reqValue.setText(apiDocModel.getApiReq());
         resValue.setText(apiDocModel.getApiRes());
+        docNameValue.setText(apiDocModel.getApiDocName());
+        apiMethodValue.setText(apiDocModel.getApiMethod());
+        fullFilePathValue.setText(apiDocModel.getFullFilePath());
         //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         init();
     }
@@ -44,6 +51,21 @@ public class ApiDialog extends JDialog {
 
     private void onGenerate() {
         System.out.println("generateBtn click");
+        String uriValueText = uriValue.getText();
+        String reqValueText = reqValue.getText();
+        String resValueText = resValue.getText();
+        String docNameValueText = docNameValue.getText();
+        String methodValueText = apiMethodValue.getText();
+        String fullFilePathValueText = fullFilePathValue.getText();
+        ApiDocModel apiDocModel = new ApiDocModel();
+        apiDocModel.setApiUrl(uriValueText);
+        apiDocModel.setApiReq(reqValueText);
+        apiDocModel.setApiRes(resValueText);
+        apiDocModel.setApiDocName(docNameValueText);
+        apiDocModel.setApiMethod(methodValueText);
+        apiDocModel.setFullFilePath(fullFilePathValueText);
+        GenUtil.genApiDoc(apiDocModel);
+        System.out.println("generateBtn ok");
         dispose();
     }
 
@@ -58,4 +80,5 @@ public class ApiDialog extends JDialog {
         setLocationRelativeTo(WindowManager.getInstance().getFrame(this.project));
         setVisible(true);
     }
+
 }

@@ -13,6 +13,8 @@ public class ApiDocModel implements CommonModel {
     private String apiUrl;
     private String apiReq;
     private String apiRes;
+    private String apiMethod;
+    private String fullFilePath;
 
     @Override
     public String getFilePath() {
@@ -54,5 +56,22 @@ public class ApiDocModel implements CommonModel {
 
     public void setApiRes(String apiRes) {
         this.apiRes = apiRes;
+    }
+
+    public String getApiMethod() {
+        return apiMethod;
+    }
+
+    public void setApiMethod(String apiMethod) {
+        this.apiMethod = apiMethod;
+    }
+
+    public String getFullFilePath() {
+        //fullFilePath = getFilePath() + apiDocName;
+        return fullFilePath;
+    }
+
+    public void setFullFilePath(String fullFilePath) {
+        this.fullFilePath = fullFilePath;
     }
 }
