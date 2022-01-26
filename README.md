@@ -6,14 +6,14 @@
 
 1. 选中controller类中指定接口代码
 2. 右键，点击“genApiDoc”按钮
-3. 在编辑弹窗，编辑完善
-4. 点击“生成”按钮，则使用Path为生成目录；点击“生成到”，选择目标文件夹
+3. 在编辑弹窗对内容完善
+4. 点击“生成”按钮，以FilePath为生成目录；点击“生成到”，选择目标文件夹
 
 ### 插件2 视图json生成插件
 ![image](https://user-images.githubusercontent.com/51793431/151129152-e4bf12e8-c32b-42fb-9a56-e60fac3c1051.png)
 ![image](https://user-images.githubusercontent.com/51793431/151130553-943b9f00-c04b-4569-a6d7-84522ead089f.png)
 
-1. 打开指定视图代码类
-2. 在1中的编辑区域，右键，点击“genViewJson”
-3. 在编辑弹窗，对json视图编辑完善
+1. 打开代码文件
+2. 右键，点击“genViewJson”按钮
+3. 在编辑弹窗对内容完善
 4. 点击“生成”按钮，则使用Path为生成目录；点击“生成到”，选择目标文件夹
