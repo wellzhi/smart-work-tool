@@ -123,6 +123,5 @@ public class NoteDialog extends JDialog {
         //两个屏幕处理出现问题，跳到主屏幕去了
         setLocationRelativeTo(WindowManager.getInstance().getFrame(this.project));
         setVisible(true);
-
     }
 }

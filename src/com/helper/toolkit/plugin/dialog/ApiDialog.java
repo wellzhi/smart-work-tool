@@ -42,7 +42,6 @@ public class ApiDialog extends JDialog {
         apiMethodValue.setText(apiDocModel.getApiMethod());
         fullFilePathValue.setText(apiDocModel.getFullFilePath());
         tokenCheckBox.setSelected(false);
-        //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         init();
     }
 
@@ -77,7 +76,7 @@ public class ApiDialog extends JDialog {
         VirtualFile virtualFile = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), project, project.getBaseDir());
         if (virtualFile != null) {
             String path = virtualFile.getPath();
-            String fileFullPath = path + "/" + docNameValueText + ".md";
+            String fileFullPath = path + "/" + docNameValueText;
             apiDocModel.setFullFilePath(fileFullPath);
             try {
                 GenUtil.genApiDoc(apiDocModel);

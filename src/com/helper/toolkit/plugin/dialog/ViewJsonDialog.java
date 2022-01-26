@@ -79,7 +79,6 @@ public class ViewJsonDialog extends JDialog {
 
     private void onCancel() {
         System.out.println("cancelBtn click");
-        VirtualFile virtualFile = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), project, project.getBaseDir());
         dispose();
     }
 
