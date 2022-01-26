@@ -160,6 +160,7 @@ public class BizUtil {
         reqSb.append(StrUtil.DELIM_END);
         docModel.setApiReq(JSONUtil.formatJsonStr(reqSb.toString()));
         docModel.setFullFilePath(docModel.getFilePath() + docModel.getApiDocName());
+        docModel.setNeedToken(false);
         System.out.println(JSONUtil.formatJsonStr(reqSb.toString()));
         return docModel;
     }

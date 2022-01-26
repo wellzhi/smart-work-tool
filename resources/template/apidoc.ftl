@@ -2,7 +2,8 @@
 
 ### URI
 
-此接口需要 `token`
+
+此接口${(needToken)?string('需要','不需要')}`token`
 
 ```javascript
 POST ${apiUrl}

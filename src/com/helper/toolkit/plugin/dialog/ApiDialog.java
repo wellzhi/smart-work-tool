@@ -19,6 +19,7 @@ public class ApiDialog extends JDialog {
     private JTextField docNameValue;
     private JTextField apiMethodValue;
     private JTextField fullFilePathValue;
+    private JCheckBox tokenCheckBox;
 
 
     public ApiDialog(Project project, ApiDocModel apiDocModel) {
@@ -31,6 +32,7 @@ public class ApiDialog extends JDialog {
         docNameValue.setText(apiDocModel.getApiDocName());
         apiMethodValue.setText(apiDocModel.getApiMethod());
         fullFilePathValue.setText(apiDocModel.getFullFilePath());
+        tokenCheckBox.setSelected(false);
         //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         init();
     }
@@ -57,6 +59,7 @@ public class ApiDialog extends JDialog {
         String docNameValueText = docNameValue.getText();
         String methodValueText = apiMethodValue.getText();
         String fullFilePathValueText = fullFilePathValue.getText();
+        boolean tokenCheckBoxSelected = tokenCheckBox.isSelected();
         ApiDocModel apiDocModel = new ApiDocModel();
         apiDocModel.setApiUrl(uriValueText);
         apiDocModel.setApiReq(reqValueText);
@@ -64,6 +67,7 @@ public class ApiDialog extends JDialog {
         apiDocModel.setApiDocName(docNameValueText);
         apiDocModel.setApiMethod(methodValueText);
         apiDocModel.setFullFilePath(fullFilePathValueText);
+        apiDocModel.setNeedToken(tokenCheckBoxSelected);
         GenUtil.genApiDoc(apiDocModel);
         System.out.println("generateBtn ok");
         dispose();

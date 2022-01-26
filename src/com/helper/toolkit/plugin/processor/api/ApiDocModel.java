@@ -15,6 +15,7 @@ public class ApiDocModel implements CommonModel {
     private String apiRes;
     private String apiMethod;
     private String fullFilePath;
+    private boolean needToken;
 
     @Override
     public String getFilePath() {
@@ -73,5 +74,13 @@ public class ApiDocModel implements CommonModel {
 
     public void setFullFilePath(String fullFilePath) {
         this.fullFilePath = fullFilePath;
+    }
+
+    public boolean isNeedToken() {
+        return needToken;
+    }
+
+    public void setNeedToken(boolean needToken) {
+        this.needToken = needToken;
     }
 }
