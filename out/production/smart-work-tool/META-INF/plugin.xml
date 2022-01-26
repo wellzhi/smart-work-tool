@@ -40,34 +40,22 @@
 
     <!-- 编写插件动作 -->
     <actions>
-        <!-- Add your actions here -->
-        <action id="test_id" class="com.helper.toolkit.plugin.actions.TestAction" text="通知" description="测试通知功能">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
-        </action>
-
         <!-- 编辑区域：右键菜单-->
-        <action id="PopupAction_ID2" class="com.helper.toolkit.plugin.actions.PopupAction" text="genViewJson"
+        <action id="ViewJsonAction_ID" class="com.helper.toolkit.plugin.actions.ViewJsonAction" text="genViewJson"
                 description="生成视图结构json"
-                icon="/img/mark.png">
+                icon="/img/title.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
         <action id="ApiDocAction_ID" class="com.helper.toolkit.plugin.actions.ApiDocAction" text="genApiDoc"
                 description="生成apiDoc"
+                icon="/img/title.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="PopupAction_ID" class="com.helper.toolkit.plugin.actions.PopupAction" text="Mark"
+                description="选中生成md"
                 icon="/img/mark.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
-
-       <!-- <action id="id_GenerateRestUrl" class="com.helper.work.helper.actions.GenerateUrlAction"
-                text="helper-api">
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-        </action>-->
-
-        <!--<group id="MyPlugin.SampleMenu" text="Sample Menu" description="Sample menu description">
-            &lt;!&ndash;添加到工具栏最后一个&ndash;&gt;
-            <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="Myplugin.Textboxes" class="com.helper.smart.plugin.actions.TextBoxes" text="Text Boxes"
-                    description="Text Boxes description"/>
-        </group>-->
     </actions>
 
     <!--idea启动后运行代码-->

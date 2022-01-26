@@ -1,7 +1,8 @@
 package com.helper.toolkit.biz;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.helper.toolkit.plugin.processor.api.ApiDocModel;
+import com.helper.toolkit.plugin.processor.apiDoc.ApiDocModel;
+import com.helper.toolkit.plugin.processor.viewJson.ViewJsonModel;
 import freemarker.cache.StringTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -42,6 +43,23 @@ public class GenUtil {
             // contentMap.put("apiRes", docModel.getApiRes());
             //File file = new File(docModel.getFilePath() + "/" + docModel.getApiDocName());
             File file = new File(docModel.getFullFilePath());
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
+            template.process(contentMap, writer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        }
+    }
+
+    public static void genViewJson(ViewJsonModel jsonModel) {
+        try {
+            Configuration configuration = new Configuration(Configuration.VERSION_2_3_30);
+            StringTemplateLoader stringTemplateLoader = new StringTemplateLoader();
+            stringTemplateLoader.putTemplate("ViewJsonTemplate", jsonModel.getTemplateContent());
+            configuration.setTemplateLoader(stringTemplateLoader);
+            Template template = configuration.getTemplate("ViewJsonTemplate");
+            Map<String, Object> contentMap = BeanUtil.beanToMap(jsonModel);
+            File file = new File(jsonModel.getFullFilePath());
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
             template.process(contentMap, writer);
         } catch (Exception e) {

@@ -1,5 +1,6 @@
-package com.helper.toolkit.plugin.processor.api;
+package com.helper.toolkit.plugin.processor.apiDoc;
 
+import com.helper.toolkit.plugin.processor.common.CommonModel;
 import com.intellij.ide.fileTemplates.impl.UrlUtil;
 import com.helper.toolkit.biz.GenUtil;
 
@@ -24,7 +25,7 @@ public class ApiDocModel implements CommonModel {
 
     @Override
     public String getTemplateContent() throws IOException {
-        return UrlUtil.loadText(GenUtil.class.getResource("/template/apidoc.ftl"));
+        return UrlUtil.loadText(GenUtil.class.getResource("/template/ApiDoc.ftl"));
     }
 
     public String getApiDocName() {

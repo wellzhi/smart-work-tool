@@ -1,11 +1,10 @@
 package com.helper.toolkit.plugin.dialog;
 
 import cn.hutool.core.util.StrUtil;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
-import com.helper.toolkit.biz.BizUtil;
 import com.helper.toolkit.plugin.data.DataCenter;
 import com.helper.toolkit.plugin.data.NoteData;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.WindowManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,13 +42,10 @@ public class NoteDialog extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-
         lbFileName.setText(noteData.getFileName());
-        // TODO 处理成wiki json
-        String absoluteFilePath = noteData.getAbsoluteFilePath();
-        String jsonStr = BizUtil.file2WikiJson(absoluteFilePath);
+        String jsonStr = null;
         taCode.setText(jsonStr);
-        // taCode.setText(noteData.getContent());
+         taCode.setText(noteData.getContent());
         tfTitle.setText(noteData.getTitle());
         taMark.setText(noteData.getMark());
 
@@ -97,7 +93,6 @@ public class NoteDialog extends JDialog {
         String title = tfTitle.getText();
         String mark = taMark.getText();
         String code = taCode.getText();
-        // String fileType = DataCenter.FILE_NAME.substring(DataCenter.FILE_NAME.lastIndexOf(".") + 1);
         String fileType = StrUtil.subAfter(DataCenter.FILE_NAME, ".", true);
         NoteData noteData = new NoteData(title, mark, code, DataCenter.FILE_NAME, fileType, DataCenter.ABSOLUTE_FILE_PATH);
         DataCenter.update(index, noteData);
@@ -108,7 +103,6 @@ public class NoteDialog extends JDialog {
         String title = tfTitle.getText();
         String mark = taMark.getText();
         String code = taCode.getText();
-        // String fileType = DataCenter.FILE_NAME.substring(DataCenter.FILE_NAME.lastIndexOf(".") + 1);
         String fileType = StrUtil.subAfter(DataCenter.FILE_NAME, ".", true);
         NoteData noteData = new NoteData(title, mark, code, DataCenter.FILE_NAME, fileType, DataCenter.ABSOLUTE_FILE_PATH);
         DataCenter.add(noteData);

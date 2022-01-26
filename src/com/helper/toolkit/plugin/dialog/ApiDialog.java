@@ -1,8 +1,16 @@
 package com.helper.toolkit.plugin.dialog;
 
 import com.helper.toolkit.biz.GenUtil;
-import com.helper.toolkit.plugin.processor.api.ApiDocModel;
+import com.helper.toolkit.plugin.processor.apiDoc.ApiDocModel;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationDisplayType;
+import com.intellij.notification.NotificationGroup;
+import com.intellij.notification.Notifications;
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.MessageType;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
 
 import javax.swing.*;
@@ -20,6 +28,7 @@ public class ApiDialog extends JDialog {
     private JTextField apiMethodValue;
     private JTextField fullFilePathValue;
     private JCheckBox tokenCheckBox;
+    private JButton generate2FileBtn;
 
 
     public ApiDialog(Project project, ApiDocModel apiDocModel) {
@@ -44,6 +53,42 @@ public class ApiDialog extends JDialog {
         cancelBtn.addActionListener(e -> {
             onCancel();
         });
+        generate2FileBtn.addActionListener(e -> {
+            onGenerate2File();
+        });
+    }
+
+    private void onGenerate2File() {
+        String uriValueText = uriValue.getText();
+        String reqValueText = reqValue.getText();
+        String resValueText = resValue.getText();
+        String docNameValueText = docNameValue.getText();
+        String methodValueText = apiMethodValue.getText();
+        String fullFilePathValueText = fullFilePathValue.getText();
+        boolean tokenCheckBoxSelected = tokenCheckBox.isSelected();
+        ApiDocModel apiDocModel = new ApiDocModel();
+        apiDocModel.setApiUrl(uriValueText);
+        apiDocModel.setApiReq(reqValueText);
+        apiDocModel.setApiRes(resValueText);
+        apiDocModel.setApiDocName(docNameValueText);
+        apiDocModel.setApiMethod(methodValueText);
+        apiDocModel.setFullFilePath(fullFilePathValueText);
+        apiDocModel.setNeedToken(tokenCheckBoxSelected);
+        VirtualFile virtualFile = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), project, project.getBaseDir());
+        if (virtualFile != null) {
+            String path = virtualFile.getPath();
+            String fileFullPath = path + "/" + docNameValueText + ".md";
+            apiDocModel.setFullFilePath(fileFullPath);
+            try {
+                GenUtil.genApiDoc(apiDocModel);
+                NotificationGroup notificationGroup = new NotificationGroup("markbook_id", NotificationDisplayType.BALLOON, true);
+                Notification notification = notificationGroup.createNotification("Generate Document Success：" + fileFullPath, MessageType.INFO);
+                Notifications.Bus.notify(notification);
+                dispose();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     private void onCancel() {

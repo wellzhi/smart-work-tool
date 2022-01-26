@@ -9,7 +9,7 @@ import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.project.Project;
 import com.helper.toolkit.biz.BizUtil;
 import com.helper.toolkit.plugin.dialog.ApiDialog;
-import com.helper.toolkit.plugin.processor.api.ApiDocModel;
+import com.helper.toolkit.plugin.processor.apiDoc.ApiDocModel;
 
 public class ApiDocAction extends AnAction {
 
