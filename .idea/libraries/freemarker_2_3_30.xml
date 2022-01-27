@@ -3,10 +3,9 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/freemarker-2.3.30.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/hutool-all-5.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lombok-1.18.18.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.ideaLibSources/hutool-all-5.2.3-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
