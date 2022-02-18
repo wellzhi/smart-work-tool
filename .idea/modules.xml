@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/smart-work-tool.iml" filepath="$PROJECT_DIR$/.idea/smart-work-tool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smart-work-tool.iml" filepath="$PROJECT_DIR$/smart-work-tool.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,71 @@
+<idea-plugin>
+    <!-- 插件唯一id，不能和其他插件项目重复，所以推荐使用com.xxx.xxx的格式
+        插件不同版本之间不能更改，若没有指定，则与插件名称相同 -->
+    <id>com.helper.toolkit.plugin.id</id>
+    <!-- 插件名称，别人在官方插件库搜索你的插件时使用的名称 -->
+    <name>smart-work-tool</name>
+    <!-- 插件版本号 -->
+    <version>1.0</version>
+    <!-- 供应商主页和email（不能使用默认值，必须修改成自己的）-->
+    <vendor email="381197562@qq.com" url="https://github.com/wellzhi/smart-work-tool">Company</vendor>
+    <!-- 插件的描述 （不能使用默认值，必须修改成自己的。并且需要大于40个字符）-->
+    <description>
+        <![CDATA[自己工作中使用方便而开发，方便写接口文档，方便转等，后续迭代开发，逐步完善，利用闲暇时间开发]]>
+    </description>
+
+    <!-- 插件版本变更信息，支持HTML标签；将展示在 settings | Plugins 对话框和插件仓库的Web页面 -->
+    <change-notes><![CDATA[
+      插件版本变更信息，支持HTML标签<br>
+      <em>插件版本变更信息，支持HTML标签</em>
+      <em>插件版本变更信息，支持HTML标签</em>
+      <em>插件版本变更信息，支持HTML标签</em>
+    ]]>
+    </change-notes>
+
+    <!-- 插件兼容IDEAbuild 号-->
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- 插件所依赖的其他插件的id -->
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <!-- 声明该插件对IDEA core或其他插件的扩展 -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <!-- 编写插件动作 -->
+    <actions>
+        <!-- 编辑区域：右键菜单-->
+        <action id="ViewJsonAction_ID" class="com.helper.toolkit.plugin.actions.ViewJsonAction" text="genViewJson"
+                description="生成视图结构json"
+                icon="/img/title.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="ApiDocAction_ID" class="com.helper.toolkit.plugin.actions.ApiDocAction" text="genApiDoc"
+                description="生成apiDoc"
+                icon="/img/title.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="PopupAction_ID" class="com.helper.toolkit.plugin.actions.PopupAction" text="Mark"
+                description="选中生成md"
+                icon="/img/mark.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+
+    <!--idea启动后运行代码-->
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.helper.toolkit.plugin.components.TestApplication"/>
+    </extensions>
+
+    <depends>com.intellij.modules.lang</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="MarkBook" factoryClass="com.helper.toolkit.plugin.window.NoteListWindowFactory" anchor="right"
+                    icon="/img/mark.png"></toolWindow>
+    </extensions>
+</idea-plugin>

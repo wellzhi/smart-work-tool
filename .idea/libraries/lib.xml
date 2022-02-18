@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/lombok-1.18.18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/freemarker-2.3.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hutool-all-5.2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
