@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 public class BizUtil {
     public static final String QUOTES = "\"";
+
     public static String genViewJson(String allText, String selectedText) {
         List<String> rawStrList = StrUtil.splitTrim(allText, "\n");
         StringBuffer sb = new StringBuffer();
@@ -104,16 +105,33 @@ public class BizUtil {
 
         List<String> apiParamStrs = selectedLines
                 .stream()
-                .filter(f -> f.contains("=") && f.contains("node"))
+                .filter(f -> (f.contains("=") && f.contains("node")) ||
+                        (f.contains("=") && f.contains("params")))
                 .collect(Collectors.toList());
 
         StringBuffer reqSb = new StringBuffer();
         reqSb.append(StrUtil.DELIM_START);
         for (String apiParamStr : apiParamStrs) {
             String typeStr = StrUtil.trim(StrUtil.subBetween(apiParamStr, "=", "("));
+            // 单个参数
             if (Const.PARAM_TYPE_MAP.containsKey(typeStr)) {
                 String paramName = StrUtil.subBetween(apiParamStr, "\"", "\"");
                 Object paramType = Const.PARAM_TYPE_MAP.get(typeStr);
+                reqSb.append("\"").append(paramName).append("\"").append(":")
+                        .append("\"").append("${").append(paramName).append(":")
+                        .append(paramType).append("}").append("\"").append(",");
+            }
+            // 对象或对象列表
+            if (apiParamStr.contains(Const.PARAM_OBJECTS) || apiParamStr.contains(Const.PARAM_OBJECT)) {
+                // List<PageReadRecord> records = getObjects(params.get("records"), PageReadRecord.class);
+                // List<String> targetIds = getObjects(params.get("targetIds"), String.class);
+                // LoginView loginView = getObject(params.get("loginObj"), LoginView.class);
+                String paramName = StrUtil.subBetween(apiParamStr, "\"", "\"");
+                List<String> partStrList = StrUtil.splitTrim(apiParamStr, StrUtil.SPACE);
+                String paramType = "";
+                if (!partStrList.isEmpty()) {
+                    paramType = partStrList.get(0);
+                }
                 reqSb.append("\"").append(paramName).append("\"").append(":")
                         .append("\"").append("${").append(paramName).append(":")
                         .append(paramType).append("}").append("\"").append(",");

@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Const {
+    public final static String PARAM_OBJECTS = "getObjects";
+    public final static String PARAM_OBJECT = "getObject";
     public final static Map PARAM_TYPE_MAP = new HashMap();
     static {
         PARAM_TYPE_MAP.put("getRequiredTextField", "String");

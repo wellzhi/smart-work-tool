@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/freemarker_2_3_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="插件验证、完善、补充必要说明">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/BizUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/BizUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/Const.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/biz/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/biz/Const.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +44,15 @@
     </option>
   </component>
   <component name="ProjectId" id="25DpUytkBr0IFnweHFa52Bg84dO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -87,6 +90,14 @@
       <option name="presentableId" value="Default" />
       <updated>1645071531517</updated>
     </task>
+    <task id="LOCAL-00001" summary="插件验证、完善、补充必要说明">
+      <created>1645175030216</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645175030216</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +112,11 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="插件验证、完善、补充必要说明" />
+    <option name="LAST_COMMIT_MESSAGE" value="插件验证、完善、补充必要说明" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -108,6 +124,26 @@
           <properties class="com.intellij.diagnostic.PluginException" package="com.intellij.diagnostic" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
