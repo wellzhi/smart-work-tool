@@ -22,7 +22,7 @@
 ### 插件3 代码片段做笔记插件
 ![image](https://user-images.githubusercontent.com/51793431/154928686-357275e4-20f8-4c04-afbc-28fcaaa60730.png)
 ![image](https://user-images.githubusercontent.com/51793431/154928943-599704bf-1f13-4052-92e7-2ef27214a3e9.png)
-![image](https://user-images.githubusercontent.com/51793431/154930049-a5b511ea-1ccf-4b6c-8857-36e1eca58268.png)
+![image](https://user-images.githubusercontent.com/51793431/154930405-96e6a696-b8c1-4e7a-8a98-65d3633d8ad6.png)
 
 
 1. 打开代码文件
