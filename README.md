@@ -22,8 +22,10 @@
 ### 插件3 代码片段做笔记插件
 ![image](https://user-images.githubusercontent.com/51793431/154928686-357275e4-20f8-4c04-afbc-28fcaaa60730.png)
 ![image](https://user-images.githubusercontent.com/51793431/154928943-599704bf-1f13-4052-92e7-2ef27214a3e9.png)
+![image](https://user-images.githubusercontent.com/51793431/154930049-a5b511ea-1ccf-4b6c-8857-36e1eca58268.png)
+
 
 1. 打开代码文件
 2. 选择要收藏的代码片段
 3. 右键点击“Mark”菜单
-4. 在右侧Mark表格可以看到已收藏的笔记
+4. 在右侧Mark表格，可以看到已收藏的笔记
