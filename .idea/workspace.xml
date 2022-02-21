@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="apiDoc：增加接口参数缺省值">
+    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="完善插件描述及相关文档">
       <change afterPath="$PROJECT_DIR$/doc/~$ideaC2021.2.4的开发指南（小记）.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/基于ideaC2021.2.4的开发指南（小记）.docx" beforeDir="false" afterPath="$PROJECT_DIR$/doc/基于ideaC2021.2.4的开发指南（小记）.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +59,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3052209" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\java\idea-plugin-projects\smart-work-tool\plugins-backup" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
@@ -117,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645433067350</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完善插件描述及相关文档">
+      <created>1645434216988</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645434216988</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,7 +149,8 @@
     <MESSAGE value="插件验证、完善、补充必要说明" />
     <MESSAGE value="apiDoc方法完善参数获取" />
     <MESSAGE value="apiDoc：增加接口参数缺省值" />
-    <option name="LAST_COMMIT_MESSAGE" value="apiDoc：增加接口参数缺省值" />
+    <MESSAGE value="完善插件描述及相关文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善插件描述及相关文档" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
