@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="插件验证、完善、补充必要说明">
+    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="apiDoc方法完善参数获取">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/BizUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/BizUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/Const.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/dialog/ApiDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/dialog/ApiDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/biz/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/biz/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +60,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="477" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -97,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645175030216</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="apiDoc方法完善参数获取">
+      <created>1645178470524</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645178470524</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,7 +128,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="插件验证、完善、补充必要说明" />
-    <option name="LAST_COMMIT_MESSAGE" value="插件验证、完善、补充必要说明" />
+    <MESSAGE value="apiDoc方法完善参数获取" />
+    <option name="LAST_COMMIT_MESSAGE" value="apiDoc方法完善参数获取" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -126,22 +140,22 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
-          <line>111</line>
+          <line>113</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
-          <line>112</line>
+          <line>115</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
-          <line>139</line>
+          <line>153</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
-          <line>144</line>
+          <line>160</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

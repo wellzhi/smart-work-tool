@@ -3,12 +3,12 @@
   <grid id="27dc6" binding="contentPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="20" left="20" bottom="20" right="20"/>
     <constraints>
-      <xy x="22" y="0" width="1012" height="756"/>
+      <xy x="22" y="0" width="912" height="820"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="7d142" layout-manager="GridLayoutManager" row-count="5" column-count="26" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="7d142" layout-manager="GridLayoutManager" row-count="5" column-count="23" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -27,7 +27,11 @@
           </component>
           <scrollpane id="6531">
             <constraints>
-              <grid row="3" column="1" row-span="1" col-span="25" vsize-policy="6" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="1" row-span="1" col-span="12" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="200"/>
+                <preferred-size width="-1" height="300"/>
+                <maximum-size width="-1" height="300"/>
+              </grid>
             </constraints>
             <properties/>
             <border type="none"/>
@@ -37,7 +41,7 @@
                 <properties>
                   <columns value="0"/>
                   <editable value="true"/>
-                  <lineWrap value="true"/>
+                  <lineWrap value="false"/>
                   <rows value="0"/>
                   <text value=""/>
                   <wrapStyleWord value="false"/>
@@ -77,7 +81,11 @@
           </grid>
           <scrollpane id="f69a6">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="25" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="1" row-span="1" col-span="22" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="250"/>
+                <preferred-size width="-1" height="250"/>
+                <maximum-size width="-1" height="300"/>
+              </grid>
             </constraints>
             <properties/>
             <border type="none"/>
@@ -99,7 +107,7 @@
           </component>
           <component id="281fc" class="javax.swing.JTextField" binding="docNameValue">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="25" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="1" column="1" row-span="1" col-span="22" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
@@ -114,16 +122,6 @@
             <properties>
               <icon value="img/title.png"/>
               <text value="File"/>
-            </properties>
-          </component>
-          <component id="c8b4e" class="javax.swing.JTextField" binding="fullFilePathValue">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="25" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <editable value="true"/>
             </properties>
           </component>
           <component id="7fb21" class="javax.swing.JCheckBox" binding="tokenCheckBox" default-binding="true">
@@ -148,7 +146,7 @@
           </component>
           <component id="9aef1" class="javax.swing.JTextField" binding="uriValue">
             <constraints>
-              <grid row="2" column="3" row-span="1" col-span="18" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="2" column="3" row-span="1" col-span="20" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="675" height="30"/>
               </grid>
             </constraints>
@@ -156,6 +154,33 @@
               <editable value="false"/>
             </properties>
           </component>
+          <component id="c8b4e" class="javax.swing.JTextField" binding="fullFilePathValue">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="22" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <editable value="true"/>
+            </properties>
+          </component>
+          <scrollpane id="ada38">
+            <constraints>
+              <grid row="3" column="13" row-span="1" col-span="10" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="200"/>
+                <preferred-size width="-1" height="300"/>
+                <maximum-size width="-1" height="300"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="95be8" class="javax.swing.JTextArea" binding="reqInitValue">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
         </children>
       </grid>
       <grid id="602fe" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

@@ -1,5 +1,6 @@
 package com.helper.toolkit.biz;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +8,7 @@ public class Const {
     public final static String PARAM_OBJECTS = "getObjects";
     public final static String PARAM_OBJECT = "getObject";
     public final static Map PARAM_TYPE_MAP = new HashMap();
+
     static {
         PARAM_TYPE_MAP.put("getRequiredTextField", "String");
         PARAM_TYPE_MAP.put("getRequiredBigDecimalField", "BigDecimal");
@@ -30,5 +32,22 @@ public class Const {
         //Double oDouble = getOptionalDoubleField(node, "oDouble");
         //Integer oInteger = getOptionalIntField(node, "oInteger");
         //Long oLong = getOptionalLongField(node, "oLong");
+    }
+
+    public final static Map PARAM_INIT_VALUE_MAP = new HashMap();
+    static {
+        PARAM_INIT_VALUE_MAP.put("getRequiredTextField", "String");
+        PARAM_INIT_VALUE_MAP.put("getRequiredBigDecimalField", BigDecimal.ZERO);
+        PARAM_INIT_VALUE_MAP.put("getRequiredBooleanField", false);
+        PARAM_INIT_VALUE_MAP.put("getRequiredDoubleField", 3.14D);
+        PARAM_INIT_VALUE_MAP.put("getRequiredIntField", 1);
+        PARAM_INIT_VALUE_MAP.put("getRequiredLongField", 1L);
+        PARAM_INIT_VALUE_MAP.put("getOptionalTextField", "String");
+        PARAM_INIT_VALUE_MAP.put("getOptionalBooleanField", false);
+        PARAM_INIT_VALUE_MAP.put("getOptionalDoubleField", 3.14D);
+        PARAM_INIT_VALUE_MAP.put("getOptionalIntField", 1);
+        PARAM_INIT_VALUE_MAP.put("getOptionalLongField", 1L);
+        PARAM_INIT_VALUE_MAP.put("getObjects", "[]");
+        PARAM_INIT_VALUE_MAP.put("getObject", "{}");
     }
 }

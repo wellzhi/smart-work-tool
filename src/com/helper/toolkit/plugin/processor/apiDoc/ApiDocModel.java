@@ -13,6 +13,7 @@ public class ApiDocModel implements CommonModel {
     private String apiDocName;
     private String apiUrl;
     private String apiReq;
+    private String apiReqInitValue;
     private String apiRes;
     private String apiMethod;
     private String fullFilePath;
@@ -83,5 +84,13 @@ public class ApiDocModel implements CommonModel {
 
     public void setNeedToken(boolean needToken) {
         this.needToken = needToken;
+    }
+
+    public String getApiReqInitValue() {
+        return apiReqInitValue;
+    }
+
+    public void setApiReqInitValue(String apiReqInitValue) {
+        this.apiReqInitValue = apiReqInitValue;
     }
 }

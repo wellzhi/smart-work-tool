@@ -105,12 +105,16 @@ public class BizUtil {
 
         List<String> apiParamStrs = selectedLines
                 .stream()
+                .filter(f -> StrUtil.isNotBlank(f))
+                .filter(f -> !f.startsWith("//"))
                 .filter(f -> (f.contains("=") && f.contains("node")) ||
                         (f.contains("=") && f.contains("params")))
                 .collect(Collectors.toList());
 
         StringBuffer reqSb = new StringBuffer();
+        StringBuffer initSb = new StringBuffer();
         reqSb.append(StrUtil.DELIM_START);
+        initSb.append(StrUtil.DELIM_START);
         for (String apiParamStr : apiParamStrs) {
             String typeStr = StrUtil.trim(StrUtil.subBetween(apiParamStr, "=", "("));
             // 单个参数
@@ -120,6 +124,10 @@ public class BizUtil {
                 reqSb.append("\"").append(paramName).append("\"").append(":")
                         .append("\"").append("${").append(paramName).append(":")
                         .append(paramType).append("}").append("\"").append(",");
+
+                initSb.append("\"").append(paramName).append("\"").append(":")
+                        .append(Const.PARAM_INIT_VALUE_MAP.get(typeStr))
+                        .append(",");
             }
             // 对象或对象列表
             if (apiParamStr.contains(Const.PARAM_OBJECTS) || apiParamStr.contains(Const.PARAM_OBJECT)) {
@@ -135,10 +143,18 @@ public class BizUtil {
                 reqSb.append("\"").append(paramName).append("\"").append(":")
                         .append("\"").append("${").append(paramName).append(":")
                         .append(paramType).append("}").append("\"").append(",");
+
+                String paramTypeStr = StrUtil.trim(StrUtil.subBetween(apiParamStr, "=", "("));
+                initSb.append("\"").append(paramName).append("\"").append(":")
+                        .append(Const.PARAM_INIT_VALUE_MAP.get(paramTypeStr))
+                        .append(",");
+
             }
         }
         reqSb.append(StrUtil.DELIM_END);
+        initSb.append(StrUtil.DELIM_END);
         docModel.setApiReq(JSONUtil.formatJsonStr(reqSb.toString()));
+        docModel.setApiReqInitValue(JSONUtil.formatJsonStr(initSb.toString()));
         docModel.setFullFilePath(docModel.getFilePath() + docModel.getApiDocName());
         docModel.setNeedToken(false);
         System.out.println(JSONUtil.formatJsonStr(reqSb.toString()));

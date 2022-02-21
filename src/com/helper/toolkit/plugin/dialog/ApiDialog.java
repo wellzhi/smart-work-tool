@@ -21,6 +21,7 @@ public class ApiDialog extends JDialog {
     private JPanel contentPanel;
     private JTextField uriValue;
     private JTextArea reqValue;
+    private JTextArea reqInitValue;
     private JTextArea resValue;
     private JButton generateBtn;
     private JButton cancelBtn;
@@ -37,6 +38,7 @@ public class ApiDialog extends JDialog {
         setModal(true);
         uriValue.setText(apiDocModel.getApiUrl());
         reqValue.setText(apiDocModel.getApiReq());
+        reqInitValue.setText(apiDocModel.getApiReqInitValue());
         resValue.setText(apiDocModel.getApiRes());
         docNameValue.setText(apiDocModel.getApiDocName());
         apiMethodValue.setText(apiDocModel.getApiMethod());
@@ -129,4 +131,11 @@ public class ApiDialog extends JDialog {
         setVisible(true);
     }
 
+    public JTextArea getReqInitValue() {
+        return reqInitValue;
+    }
+
+    public void setReqInitValue(JTextArea reqInitValue) {
+        this.reqInitValue = reqInitValue;
+    }
 }
