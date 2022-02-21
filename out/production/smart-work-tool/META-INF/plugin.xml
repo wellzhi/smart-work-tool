@@ -1,24 +1,25 @@
 <idea-plugin>
     <!-- 插件唯一id，不能和其他插件项目重复，所以推荐使用com.xxx.xxx的格式
         插件不同版本之间不能更改，若没有指定，则与插件名称相同 -->
-    <id>com.helper.toolkit.plugin.id</id>
+    <id>com.wellzhi.smart-work-tool.id</id>
     <!-- 插件名称，别人在官方插件库搜索你的插件时使用的名称 -->
     <name>smart-work-tool</name>
     <!-- 插件版本号 -->
-    <version>1.0</version>
+    <version>1.0.0</version>
     <!-- 供应商主页和email（不能使用默认值，必须修改成自己的）-->
-    <vendor email="381197562@qq.com" url="https://github.com/wellzhi/smart-work-tool">Company</vendor>
+    <vendor email="381197562@qq.com" url="https://github.com/wellzhi/smart-work-tool">wellzhi</vendor>
     <!-- 插件的描述 （不能使用默认值，必须修改成自己的。并且需要大于40个字符）-->
     <description>
-        <![CDATA[自己工作中使用方便而开发，方便写接口文档，方便转等，后续迭代开发，逐步完善，利用闲暇时间开发]]>
+        <![CDATA[为方便工作中写接口文档，和获取特定类的视图结构而开发的插件。
+        本插件基于ideaC2021.2.4版本开发，适用于ideaC2021.x，ideaU2021.x版本。
+        使用方法可见github：https://github.com/wellzhi/smart-work-tool
+]]>
     </description>
 
     <!-- 插件版本变更信息，支持HTML标签；将展示在 settings | Plugins 对话框和插件仓库的Web页面 -->
     <change-notes><![CDATA[
-      插件版本变更信息，支持HTML标签<br>
-      <em>插件版本变更信息，支持HTML标签</em>
-      <em>插件版本变更信息，支持HTML标签</em>
-      <em>插件版本变更信息，支持HTML标签</em>
+      插件更新历史<br>
+      <em>1.0.0：添加apiDoc生成功能；java类生成视图功能；代码笔记功能</em>
     ]]>
     </change-notes>
 
