@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="完善文档">
+    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="安装官方市场要求，增加插件英文说明，用于审核">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/META-INF/plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645436180258</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="安装官方市场要求，增加插件英文说明，用于审核">
+      <created>1645496883575</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645496883575</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,7 +164,8 @@
     <MESSAGE value="apiDoc：增加接口参数缺省值" />
     <MESSAGE value="完善插件描述及相关文档" />
     <MESSAGE value="完善文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善文档" />
+    <MESSAGE value="安装官方市场要求，增加插件英文说明，用于审核" />
+    <option name="LAST_COMMIT_MESSAGE" value="安装官方市场要求，增加插件英文说明，用于审核" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -25,6 +25,7 @@
     <change-notes><![CDATA[
       Update history<br>
       <em>1.0.0：Add apidoc generation function; Java class generates view function; Code note function</em>
+      <br>
       插件更新历史<br>
       <em>1.0.0：添加apiDoc生成功能；java类生成视图功能；代码笔记功能</em>
     ]]>
