@@ -18,3 +18,14 @@
 2. 右键，点击“genViewJson”按钮
 3. 在编辑弹窗对内容完善
 4. 点击“生成”按钮，则使用Path为生成目录；点击“生成到”，选择目标文件夹
+
+### 插件3 代码片段做笔记插件
+![image](https://user-images.githubusercontent.com/51793431/154928686-357275e4-20f8-4c04-afbc-28fcaaa60730.png)
+![image](https://user-images.githubusercontent.com/51793431/154928943-599704bf-1f13-4052-92e7-2ef27214a3e9.png)
+![image](https://user-images.githubusercontent.com/51793431/154930405-96e6a696-b8c1-4e7a-8a98-65d3633d8ad6.png)
+
+
+1. 打开代码文件
+2. 选择要收藏的代码片段
+3. 右键点击“Mark”菜单
+4. 在右侧Mark表格，可以看到已收藏的笔记
