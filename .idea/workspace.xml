@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="安装官方市场要求，增加插件英文说明，用于审核">
+    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="更新版本及说明">
+      <change afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/Const.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/template/ApiDoc.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/template/ApiDoc.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/NoteDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/NoteDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,12 +64,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="477" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="426" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="435" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3052209" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -157,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645497047408</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="更新版本及说明">
+      <created>1645497368140</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1645497368140</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,7 +199,8 @@
     <MESSAGE value="完善插件描述及相关文档" />
     <MESSAGE value="完善文档" />
     <MESSAGE value="安装官方市场要求，增加插件英文说明，用于审核" />
-    <option name="LAST_COMMIT_MESSAGE" value="安装官方市场要求，增加插件英文说明，用于审核" />
+    <MESSAGE value="更新版本及说明" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新版本及说明" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

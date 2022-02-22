@@ -1,10 +1,15 @@
 package com.helper.toolkit.plugin.processor.apiDoc;
 
+import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.StrUtil;
+import com.helper.toolkit.plugin.Const;
 import com.helper.toolkit.plugin.processor.common.CommonModel;
 import com.intellij.ide.fileTemplates.impl.UrlUtil;
 import com.helper.toolkit.biz.GenUtil;
 
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * @author 15108
@@ -17,7 +22,11 @@ public class ApiDocModel implements CommonModel {
     private String apiRes;
     private String apiMethod;
     private String fullFilePath;
+    private String desc;
     private boolean needToken;
+    // 中间变量
+    private String apiItemMd;
+
 
     @Override
     public String getFilePath() {
@@ -92,5 +101,29 @@ public class ApiDocModel implements CommonModel {
 
     public void setApiReqInitValue(String apiReqInitValue) {
         this.apiReqInitValue = apiReqInitValue;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getApiItemMd() {
+        String apiDocName = this.apiDocName;
+        String todayStr = DateUtil.format(new Date(), DatePattern.NORM_DATE_PATTERN);
+        // | insurance |[getInsurancePage](Api-insurance-getInsurancePage)|R|保险主页信息|:green_apple: |2022-01-07|
+        // Api-insurance-getInsurancePage
+        apiDocName = StrUtil.subBefore(apiDocName, Const.MD_SUFFIX, true);
+        // insurance
+        String apiNameL2 = StrUtil.subBetween(apiDocName, Const.API_DOC_PREFIX, "-");
+        String apiNameL3 = StrUtil.subAfter(apiDocName, "-", true);
+        return "|" + apiNameL2 + "|[" + apiNameL3 + "](" + apiDocName + ")|R|" + desc + "|:green_apple:|" + todayStr + "|";
+    }
+
+    public void setApiItemMd(String apiItemMd) {
+        this.apiItemMd = apiItemMd;
     }
 }

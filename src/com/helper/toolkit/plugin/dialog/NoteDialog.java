@@ -45,7 +45,7 @@ public class NoteDialog extends JDialog {
         lbFileName.setText(noteData.getFileName());
         String jsonStr = null;
         taCode.setText(jsonStr);
-         taCode.setText(noteData.getContent());
+        taCode.setText(noteData.getContent());
         tfTitle.setText(noteData.getTitle());
         taMark.setText(noteData.getMark());
 

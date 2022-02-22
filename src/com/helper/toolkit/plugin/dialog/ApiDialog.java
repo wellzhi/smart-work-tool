@@ -30,6 +30,7 @@ public class ApiDialog extends JDialog {
     private JTextField fullFilePathValue;
     private JCheckBox tokenCheckBox;
     private JButton generate2FileBtn;
+    private JTextField desc;
 
 
     public ApiDialog(Project project, ApiDocModel apiDocModel) {
@@ -44,6 +45,7 @@ public class ApiDialog extends JDialog {
         apiMethodValue.setText(apiDocModel.getApiMethod());
         fullFilePathValue.setText(apiDocModel.getFullFilePath());
         tokenCheckBox.setSelected(false);
+        desc.setText("接口描述");
         init();
     }
 
@@ -75,6 +77,7 @@ public class ApiDialog extends JDialog {
         apiDocModel.setApiMethod(methodValueText);
         apiDocModel.setFullFilePath(fullFilePathValueText);
         apiDocModel.setNeedToken(tokenCheckBoxSelected);
+        apiDocModel.setDesc(desc.getText());
         VirtualFile virtualFile = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), project, project.getBaseDir());
         if (virtualFile != null) {
             String path = virtualFile.getPath();
@@ -82,9 +85,9 @@ public class ApiDialog extends JDialog {
             apiDocModel.setFullFilePath(fileFullPath);
             try {
                 GenUtil.genApiDoc(apiDocModel);
-                NotificationGroup notificationGroup = new NotificationGroup("markbook_id", NotificationDisplayType.BALLOON, true);
-                Notification notification = notificationGroup.createNotification("Generate Document Success：" + fileFullPath, MessageType.INFO);
-                Notifications.Bus.notify(notification);
+//                NotificationGroup notificationGroup = new NotificationGroup("markbook_id", NotificationDisplayType.BALLOON, true);
+//                Notification notification = notificationGroup.createNotification("Generate Document Success：" + fileFullPath, MessageType.INFO);
+//                Notifications.Bus.notify(notification);
                 dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
