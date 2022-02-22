@@ -1,5 +1,5 @@
 ### 接口描述
-
+${desc}
 ### URI
 
 
@@ -24,3 +24,5 @@ ${apiRes}
 ### 视图结构
 ```javascript
 ```
+
+${apiItemMd}
