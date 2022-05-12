@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="新增接口描述，导出文件新增接口项markdown" />
+    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="新增接口描述，导出文件新增接口项markdown">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/基于ideaC2021.2.4的开发指南（小记）.docx" beforeDir="false" afterPath="$PROJECT_DIR$/doc/基于ideaC2021.2.4的开发指南（小记）.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/template/ApiDoc.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/template/ApiDoc.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/Const.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +64,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="426" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="435" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fast-request" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3052209" />
@@ -175,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645531715121</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="新增接口描述，导出文件新增接口项markdown">
+      <created>1645531822523</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1645531822523</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,26 +222,6 @@
           <properties class="com.intellij.diagnostic.PluginException" package="com.intellij.diagnostic" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
-          <line>153</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java</url>
-          <line>160</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -23,7 +23,12 @@ public class BizUtil {
                     || str.contains("package")
                     || str.contains("import")
                     || str.contains("||")
+                    || str.contains("=")
                     || str.contains("*")
+                    || str.contains("()")
+                    || str.contains("return")
+                    || str.contains("this.")
+                    || str.contains(") {")
                     || StrUtil.isBlank(str)
                     || str.trim().contains("public static final")
                     || str.trim().startsWith("//")
@@ -52,9 +57,17 @@ public class BizUtil {
                 String fieldStr = StrUtil.subBefore(str, ";", true);
                 List<String> words = StrUtil.splitTrim(fieldStr, StrUtil.SPACE);
                 if (words.size() == 3) {
-                    sb.append(StrUtil.concat(false, QUOTES, words.get(2), QUOTES, ":", QUOTES, "${", words.get(2), ":", words.get(1), "}", QUOTES, ","));
+                    String typeName = words.get(1);
+                    if (typeName.equals("Date")) {
+                        typeName = "long";
+                    }
+                    sb.append(StrUtil.concat(false, QUOTES, words.get(2), QUOTES, ":", QUOTES, "${", words.get(2), ":", typeName, "}", QUOTES, ","));
                 } else {
-                    sb.append(StrUtil.concat(false, QUOTES, words.get(1), QUOTES, ":", QUOTES, "${", words.get(1), ":", words.get(0), "}", QUOTES, ","));
+                    String typeName = words.get(0);
+                    if (typeName.equals("Date")) {
+                        typeName = "long";
+                    }
+                    sb.append(StrUtil.concat(false, QUOTES, words.get(1), QUOTES, ":", QUOTES, "${", words.get(1), ":", typeName, "}", QUOTES, ","));
                 }
             }
         }
@@ -107,8 +120,10 @@ public class BizUtil {
                 .stream()
                 .filter(f -> StrUtil.isNotBlank(f))
                 .filter(f -> !f.startsWith("//"))
-                .filter(f -> (f.contains("=") && f.contains("node")) ||
-                        (f.contains("=") && f.contains("params")))
+                .filter(f -> (f.contains("=") && f.contains("node"))
+                        || (f.contains("=") && f.contains("params"))
+                        || (f.contains("=") && f.contains("jsonNode"))
+                )
                 .collect(Collectors.toList());
 
         StringBuffer reqSb = new StringBuffer();
