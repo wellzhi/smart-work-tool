@@ -52,7 +52,7 @@
     <!-- 编写插件动作 -->
     <actions>
         <!-- 编辑区域：右键菜单-->
-        <action id="ViewJsonAction_ID" class="com.helper.toolkit.plugin.actions.ViewJsonAction" text="genViewJson"
+       <action id="ViewJsonAction_ID" class="com.helper.toolkit.plugin.actions.ViewJsonAction" text="genViewJson"
                 description="生成视图结构json"
                 icon="/img/title.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
@@ -67,6 +67,10 @@
                 icon="/img/mark.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
+        <action id="Bean2JSONAction_ID" class="com.helper.toolkit.plugin.actions.Java2JsonAction" text="Bean2Json"
+                description="Java Bean Convert to Json">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
     </actions>
 
     <!--idea启动后运行代码-->
@@ -75,6 +79,8 @@
     </extensions>
 
     <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="SmartMark" factoryClass="com.helper.toolkit.plugin.window.NoteListWindowFactory" anchor="right"
                     icon="/img/mark.png"></toolWindow>
