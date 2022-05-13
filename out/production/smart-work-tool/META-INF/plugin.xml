@@ -5,7 +5,7 @@
     <!-- 插件名称，别人在官方插件库搜索你的插件时使用的名称 -->
     <name>smart-work-tool</name>
     <!-- 插件版本号 -->
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <!-- 供应商主页和email（不能使用默认值，必须修改成自己的）-->
     <vendor email="381197562@qq.com" url="https://github.com/wellzhi/smart-work-tool">wellzhi</vendor>
     <!-- 插件的描述 （不能使用默认值，必须修改成自己的。并且需要大于40个字符）-->
