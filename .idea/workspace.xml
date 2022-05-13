@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="新增接口描述，导出文件新增接口项markdown">
+    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="根据使用情况调整部分文档逻辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/基于ideaC2021.2.4的开发指南（小记）.docx" beforeDir="false" afterPath="$PROJECT_DIR$/doc/基于ideaC2021.2.4的开发指南（小记）.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/template/ApiDoc.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/template/ApiDoc.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/BizUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/BizUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/template/ApiDoc.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/template/ApiDoc.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,17 +188,54 @@
       <option name="project" value="LOCAL" />
       <updated>1645531822523</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="根据使用情况调整部分文档逻辑">
+      <created>1652350227414</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652350227414</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="2275e277-5e0c-4280-97ef-ccd7e041c73d">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="2275e277-5e0c-4280-97ef-ccd7e041c73d" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
@@ -213,7 +250,8 @@
     <MESSAGE value="安装官方市场要求，增加插件英文说明，用于审核" />
     <MESSAGE value="更新版本及说明" />
     <MESSAGE value="新增接口描述，导出文件新增接口项markdown" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增接口描述，导出文件新增接口项markdown" />
+    <MESSAGE value="根据使用情况调整部分文档逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="根据使用情况调整部分文档逻辑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

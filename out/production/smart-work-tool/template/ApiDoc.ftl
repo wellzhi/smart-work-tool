@@ -18,7 +18,12 @@ ${apiReq}
 ### ResponseBody
 
 ```javascript
-${apiRes}
+{
+   "data":{
+      ${apiRes}
+   }
+
+}
 ```
 
 ### 视图结构
