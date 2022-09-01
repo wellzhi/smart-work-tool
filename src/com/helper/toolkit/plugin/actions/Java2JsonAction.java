@@ -143,9 +143,9 @@ public class Java2JsonAction extends AnAction {
                 }
             }
 
-           // if (isShowComment && commentKV.size() > 0) {
-           //     kv.set("@comment", commentKV);
-           // }
+            // if (isShowComment && commentKV.size() > 0) {
+            //     kv.set("@comment", commentKV);
+            // }
         }
 
         return kv;

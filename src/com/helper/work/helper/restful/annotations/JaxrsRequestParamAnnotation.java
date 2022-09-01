@@ -6,6 +6,7 @@ public enum JaxrsRequestParamAnnotation {
 
     private String shortName;
     private String qualifiedName;
+
     JaxrsRequestParamAnnotation(String shortName, String qualifiedName) {
         this.shortName = shortName;
         this.qualifiedName = qualifiedName;

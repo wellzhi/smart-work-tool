@@ -8,6 +8,7 @@ public enum SpringRequestParamAnnotations {
 
     private String shortName;
     private String qualifiedName;
+
     SpringRequestParamAnnotations(String shortName, String qualifiedName) {
         this.shortName = shortName;
         this.qualifiedName = qualifiedName;

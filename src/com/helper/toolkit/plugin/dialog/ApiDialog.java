@@ -1,20 +1,19 @@
 package com.helper.toolkit.plugin.dialog;
 
+import cn.hutool.core.util.StrUtil;
 import com.helper.toolkit.biz.GenUtil;
 import com.helper.toolkit.plugin.processor.apiDoc.ApiDocModel;
-import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationDisplayType;
-import com.intellij.notification.NotificationGroup;
-import com.intellij.notification.Notifications;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ApiDialog extends JDialog {
     private Project project;
@@ -31,7 +30,7 @@ public class ApiDialog extends JDialog {
     private JCheckBox tokenCheckBox;
     private JButton generate2FileBtn;
     private JTextField desc;
-
+    private JList apiViews;
 
     public ApiDialog(Project project, ApiDocModel apiDocModel) {
         this.project = project;
@@ -45,6 +44,7 @@ public class ApiDialog extends JDialog {
         apiMethodValue.setText(apiDocModel.getApiMethod());
         fullFilePathValue.setText(apiDocModel.getFullFilePath());
         tokenCheckBox.setSelected(false);
+        apiViews.setListData(apiDocModel.getApiViews().toArray());
         desc.setText("接口描述");
         init();
     }
@@ -78,6 +78,7 @@ public class ApiDialog extends JDialog {
         apiDocModel.setFullFilePath(fullFilePathValueText);
         apiDocModel.setNeedToken(tokenCheckBoxSelected);
         apiDocModel.setDesc(desc.getText());
+        apiDocModel.setApiViews(getApiResFieldNames());
         VirtualFile virtualFile = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), project, project.getBaseDir());
         if (virtualFile != null) {
             String path = virtualFile.getPath();
@@ -93,6 +94,21 @@ public class ApiDialog extends JDialog {
                 ex.printStackTrace();
             }
         }
+    }
+
+    @NotNull
+    private List<String> getApiResFieldNames() {
+        List<String> selectedValues = apiViews.getSelectedValuesList();
+        selectedValues = selectedValues
+                .stream()
+                .map(m -> {
+                    if (m.contains("List<")) {
+                        return StrUtil.subBetween(m, "List<", ">");
+                    }
+                    return m;
+                })
+                .collect(Collectors.toList());
+        return selectedValues;
     }
 
     private void onCancel() {
@@ -117,6 +133,8 @@ public class ApiDialog extends JDialog {
         apiDocModel.setApiMethod(methodValueText);
         apiDocModel.setFullFilePath(fullFilePathValueText);
         apiDocModel.setNeedToken(tokenCheckBoxSelected);
+        apiDocModel.setDesc(desc.getText());
+        apiDocModel.setApiViews(getApiResFieldNames());
         GenUtil.genApiDoc(apiDocModel);
         System.out.println("generateBtn ok");
         dispose();

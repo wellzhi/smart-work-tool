@@ -3,13 +3,13 @@ package com.helper.toolkit.plugin.processor.apiDoc;
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
+import com.helper.toolkit.biz.GenUtil;
 import com.helper.toolkit.plugin.Const;
 import com.helper.toolkit.plugin.processor.common.CommonModel;
 import com.intellij.ide.fileTemplates.impl.UrlUtil;
-import com.helper.toolkit.biz.GenUtil;
 
 import java.io.IOException;
-import java.util.Date;
+import java.util.*;
 
 /**
  * @author 15108
@@ -24,13 +24,14 @@ public class ApiDocModel implements CommonModel {
     private String fullFilePath;
     private String desc;
     private boolean needToken;
+    private List<String> apiViews = new ArrayList<>();
     // 中间变量
     private String apiItemMd;
 
 
     @Override
     public String getFilePath() {
-        return "C:\\log\\";
+        return "C:\\guide-rank-projects\\bizranking-design.wiki\\temp\\";
     }
 
     @Override
@@ -125,5 +126,13 @@ public class ApiDocModel implements CommonModel {
 
     public void setApiItemMd(String apiItemMd) {
         this.apiItemMd = apiItemMd;
+    }
+
+    public List<String> getApiViews() {
+        return apiViews;
+    }
+
+    public void setApiViews(List<String> apiViews) {
+        this.apiViews = apiViews;
     }
 }

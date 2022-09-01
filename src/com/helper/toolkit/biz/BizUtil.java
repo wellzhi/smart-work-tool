@@ -6,8 +6,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.helper.toolkit.plugin.processor.apiDoc.ApiDocModel;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class BizUtil {
@@ -61,17 +60,18 @@ public class BizUtil {
                     if (typeName.equals("Date")) {
                         typeName = "long";
                     }
-                    sb.append(StrUtil.concat(false, QUOTES, words.get(2), QUOTES, ":", QUOTES, "${", words.get(2), ":", typeName, "}", QUOTES, ","));
+                    sb.append(StrUtil.concat(false, "  " + QUOTES, words.get(2), QUOTES, ":", QUOTES, "${", words.get(2), ":", typeName, "}", QUOTES, ","));
                 } else {
                     String typeName = words.get(0);
                     if (typeName.equals("Date")) {
                         typeName = "long";
                     }
-                    sb.append(StrUtil.concat(false, QUOTES, words.get(1), QUOTES, ":", QUOTES, "${", words.get(1), ":", typeName, "}", QUOTES, ","));
+                    sb.append(StrUtil.concat(false, "  " + QUOTES, words.get(1), QUOTES, ":", QUOTES, "${", words.get(1), ":", typeName, "}", QUOTES, ","));
                 }
             }
         }
         return JSONUtil.formatJsonStr(sb.toString());
+
     }
 
     public static ApiDocModel genApiDoc(String allText, String selectedText) {
@@ -116,6 +116,7 @@ public class BizUtil {
         docModel.setApiDocName("Api" + apiUrl.replaceAll("/", "-") + ".md");
         System.out.println(apiL2Name + apiL3Name);
 
+        // 请求参数
         List<String> apiParamStrs = selectedLines
                 .stream()
                 .filter(f -> StrUtil.isNotBlank(f))
@@ -124,6 +125,14 @@ public class BizUtil {
                         || (f.contains("=") && f.contains("params"))
                         || (f.contains("=") && f.contains("jsonNode"))
                 )
+                .collect(Collectors.toList());
+        // 响应参数
+        // Collections.singletonMap("ranking",xxxx);
+        // data.put("detailInfo", xxxx);
+        List<String> apiResFieldStrs = selectedLines
+                .stream()
+                .filter(f -> StrUtil.isNotBlank(f))
+                .filter(f -> (f.contains("data.put(")) || (f.contains("singletonMap(")))
                 .collect(Collectors.toList());
 
         StringBuffer reqSb = new StringBuffer();
@@ -166,14 +175,63 @@ public class BizUtil {
 
             }
         }
+        Map<String, String> resFieldMap = new HashMap<>();
+        for (String apiResFieldStr : apiResFieldStrs) {
+
+            if (apiResFieldStr.contains("data.put(\"")) {
+                String fieldName = StrUtil.trim(StrUtil.subBetween(apiResFieldStr, "data.put(\"", "\","));
+                String fieldValueVar = StrUtil.trim(StrUtil.subBetween(apiResFieldStr, "\",", ");"));
+                // MiddleSchoolRankingView aa = cityServiceMiddleSchoolService.getMiddleSchoolRanking(rankingId);
+                // data.put("ranking", aa);
+                String fieldType = getResFieldType(selectedLines, fieldValueVar + " =");
+                resFieldMap.put(fieldName, fieldType);
+            }
+            if (apiResFieldStr.contains("singletonMap(\"")) {
+                String fieldName = StrUtil.trim(StrUtil.subBetween(apiResFieldStr, "singletonMap(\"", "\","));
+                String fieldValueVar = StrUtil.trim(StrUtil.subBetween(apiResFieldStr, "\",", ");"));
+                String fieldType = getResFieldType(selectedLines, fieldValueVar + " =");
+                resFieldMap.put(fieldName, fieldType);
+            }
+        }
         reqSb.append(StrUtil.DELIM_END);
         initSb.append(StrUtil.DELIM_END);
         docModel.setApiReq(JSONUtil.formatJsonStr(reqSb.toString()));
         docModel.setApiReqInitValue(JSONUtil.formatJsonStr(initSb.toString()));
         docModel.setFullFilePath(docModel.getFilePath() + docModel.getApiDocName());
         docModel.setNeedToken(false);
+
+        StringBuilder resSb = new StringBuilder();
+        List<String> fieldTypeViews = new ArrayList<>();
+
+        resSb.append("{\n");
+        resSb.append("  \"data\":{\n");
+        resFieldMap.forEach((fieldName, fieldType) -> {
+            String resField = "     \"%s\":\"${%s:%s}\",  //";
+            String resFieldLineStr = String.format(resField, fieldName, fieldName, fieldType);
+            resSb.append(resFieldLineStr);
+            resSb.append("\n");
+            fieldTypeViews.add(fieldType);
+        });
+        resSb.append("  }\n");
+        resSb.append("}\n");
+        docModel.setApiViews(fieldTypeViews);
+        docModel.setApiRes(resSb.toString());
         System.out.println(JSONUtil.formatJsonStr(reqSb.toString()));
         return docModel;
+    }
+
+    private static String getResFieldType(List<String> selectedLines, String targetFlag) {
+        List<String> targetLineStrs = selectedLines
+                .stream()
+                .filter(f -> f.contains(targetFlag))
+                .collect(Collectors.toList());
+        if (targetLineStrs.isEmpty()) {
+            return null;
+        }
+        String targetLineStr = targetLineStrs.get(0);
+        String resFieldTypeStr = StrUtil.subBefore(targetLineStr, targetFlag, true);
+        String resFieldType = StrUtil.trim(resFieldTypeStr);
+        return resFieldType;
     }
 
 

@@ -5,7 +5,7 @@
     <!-- 插件名称，别人在官方插件库搜索你的插件时使用的名称 -->
     <name>smart-work-tool</name>
     <!-- 插件版本号 -->
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <!-- 供应商主页和email（不能使用默认值，必须修改成自己的）-->
     <vendor email="381197562@qq.com" url="https://github.com/wellzhi/smart-work-tool">wellzhi</vendor>
     <!-- 插件的描述 （不能使用默认值，必须修改成自己的。并且需要大于40个字符）-->
@@ -28,6 +28,7 @@
       <em>1.0.0：Add apidoc generation function; Java class generates view function; Code note function</em>
       <br>
       插件更新历史<br>
+      <em>1.0.3：apiDoc文档生成、视图文档生成增强</em>
       <em>1.0.1：更新plugin.xml，补充说明</em>
       <em>1.0.0：添加apiDoc生成功能；java类生成视图功能；代码笔记功能</em>
     ]]>
@@ -52,7 +53,7 @@
     <!-- 编写插件动作 -->
     <actions>
         <!-- 编辑区域：右键菜单-->
-       <action id="ViewJsonAction_ID" class="com.helper.toolkit.plugin.actions.ViewJsonAction" text="genViewJson"
+        <action id="ViewJsonAction_ID" class="com.helper.toolkit.plugin.actions.ViewJsonAction" text="genViewJson"
                 description="生成视图结构json"
                 icon="/img/title.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>

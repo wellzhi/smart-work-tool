@@ -35,6 +35,7 @@ public class Const {
     }
 
     public final static Map PARAM_INIT_VALUE_MAP = new HashMap();
+
     static {
         PARAM_INIT_VALUE_MAP.put("getRequiredTextField", "String");
         PARAM_INIT_VALUE_MAP.put("getRequiredBigDecimalField", BigDecimal.ZERO);

@@ -12,6 +12,7 @@ public enum SpringRequestMethodAnnotation {
 
     private String qualifiedName;
     private String methodName;
+
     SpringRequestMethodAnnotation(String qualifiedName, String methodName) {
         this.qualifiedName = qualifiedName;
         this.methodName = methodName;

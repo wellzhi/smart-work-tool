@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="提升版本号">
-      <change afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/actions/Java2JsonAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/actions/KV.java" afterDir="false" />
+    <list default="true" id="c877c867-3a46-4c55-b3d5-21c1520ca42e" name="Changes" comment="增加bean2json工具">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/BizUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/BizUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/biz/Const.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/dialog/ApiDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/dialog/ApiDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/JaxrsHttpMethodAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/JaxrsHttpMethodAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/JaxrsPathAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/JaxrsPathAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/JaxrsRequestAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/JaxrsRequestAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/JaxrsRequestParamAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/JaxrsRequestParamAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/SpringControllerAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/SpringControllerAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/SpringRequestMethodAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/SpringRequestMethodAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/SpringRequestParamAnnotations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/com/helper/work/helper/restful/annotations/SpringRequestParamAnnotations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/smart-work-tool/template/ApiDoc.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/smart-work-tool/template/ApiDoc.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/template/ApiDoc.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/template/ApiDoc.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/template/ViewJson.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/template/ViewJson.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-work-tool.zip" beforeDir="false" afterPath="$PROJECT_DIR$/smart-work-tool.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/biz/BizUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/biz/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/biz/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/actions/Java2JsonAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/actions/Java2JsonAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/processor/apiDoc/ApiDocModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/processor/viewJson/ViewJsonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/toolkit/plugin/processor/viewJson/ViewJsonModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/JaxrsHttpMethodAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/JaxrsHttpMethodAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/JaxrsPathAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/JaxrsPathAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/JaxrsRequestAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/JaxrsRequestAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/JaxrsRequestParamAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/JaxrsRequestParamAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/SpringControllerAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/SpringControllerAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/SpringRequestMethodAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/SpringRequestMethodAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/SpringRequestParamAnnotations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/annotations/SpringRequestParamAnnotations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/common/spring/AntPathMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/common/spring/AntPathMatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/helper/work/helper/restful/method/action/ModuleHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/helper/work/helper/restful/method/action/ModuleHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,13 +93,14 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="426" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="435" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="240" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="453" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/helper/toolkit/plugin/actions" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3052209" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -226,7 +258,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652404444726</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="增加bean2json工具">
+      <created>1652423399476</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1652423399476</updated>
+    </task>
+    <task id="LOCAL-00019" summary="增加bean2json工具">
+      <created>1652423442623</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1652423442623</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +329,8 @@
     <MESSAGE value="新增接口描述，导出文件新增接口项markdown" />
     <MESSAGE value="根据使用情况调整部分文档逻辑" />
     <MESSAGE value="提升版本号" />
-    <option name="LAST_COMMIT_MESSAGE" value="提升版本号" />
+    <MESSAGE value="增加bean2json工具" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加bean2json工具" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -293,9 +340,29 @@
           <option name="timeStamp" value="3" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/plugin/actions/Java2JsonAction.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="28" />
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/GenUtil.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/biz/GenUtil.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/helper/toolkit/plugin/dialog/ApiDialog.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -30,7 +30,7 @@ public class ViewJsonModel implements CommonModel {
 
     @Override
     public String getFilePath() {
-        return "C:\\log\\";
+        return "C:\\guide-rank-projects\\bizranking-design.wiki\\temp\\";
     }
 
     @Override
